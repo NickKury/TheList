@@ -8,6 +8,8 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
+import MoviePage from './components/MoviePage';
+import ListPage from './components/ListPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -42,6 +44,12 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
           <h1>My Home Page</h1>
+        </ProtectedRoute>
+        <Route path='/movies/:id' exact={true}>
+          <MoviePage/>
+        </Route>
+        <ProtectedRoute path='/lists/:id' exact={true}>
+          <ListPage/>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
