@@ -7,10 +7,10 @@ class Review(db.Model):
 
     id = db.Column(db.Integer, primary_key=True, nullable=False)
     content = db.Column(db.Text)
-    created_at = db.Column(db.DateTime(timezone=True), nullable=False, server_default=func.now())
-    updated_at = db.Column(db.DateTime(timezone=True), nullable=False, server_default=func.now())
     movie_id = db.Column(db.Integer, db.ForeignKey('movies.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    created_at = db.Column(db.DateTime(timezone=True), nullable=False, server_default=func.now())
+    updated_at = db.Column(db.DateTime(timezone=True), nullable=False, server_default=func.now())
     movies = db.relationship("Movie", back_populates="reviews")
     users = db.relationship("User", back_populates="reviews")
 
