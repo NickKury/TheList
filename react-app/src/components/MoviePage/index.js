@@ -15,7 +15,7 @@ const MoviePage = () => {
     }, [dispatch, id])
 
     return(
-        <div>
+        <div> Movie Page
             <p>{movie?.title}</p>
             <p>{movie?.description}</p>
             <p>{movie?.platform}</p>

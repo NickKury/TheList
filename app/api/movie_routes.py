@@ -6,7 +6,7 @@ movie_routes = Blueprint('movies', __name__)
 
 @movie_routes.route('')
 def get_all_movies():
-    movies = Movie.query.order_by(Movie.created_at.dec()).all()
+    movies = Movie.query.all()
     return {"movies": [movie.to_dict() for movie in movies]}
 
 
