@@ -56,6 +56,17 @@ export const createList = (formData) => async(dispatch) =>{
     } else console.log("Error in creating new list")
 }
 
+export const addMovie = (formData) => async(dispatch) => {
+    const res = await fetch("/api/lists/add", {
+        method:"POST",
+        body: formData
+    });
+    if(res.ok) {
+        const list = await res.json();
+        dispatch(setOneList(list));
+    } else console.log("Error adding movie to list")
+}
+
 export const deleteList = (id) => async(dispatch) =>{
     const res = await fetch(`/api/lists/delete/${id}`, {
         method:"DELETE",
