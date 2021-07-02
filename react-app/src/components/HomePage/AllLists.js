@@ -6,7 +6,7 @@ import { renderAllLists } from "../../store/list";
 const AllLists = () => {
     const dispatch = useDispatch();
     const lists = useSelector(state => Object.values(state.list))
-    // console.log('lists from home page',lists)
+    console.log('lists from home page',lists)
 
     useEffect(() => {
         dispatch(renderAllLists())
@@ -16,7 +16,7 @@ const AllLists = () => {
        <div>
            {lists?.map((list) => (
                <div key={list?.id}>
-                   {list.listName}
+                   listname: {list?.listName}
                </div>
            ))}
        </div>

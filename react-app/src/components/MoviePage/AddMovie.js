@@ -11,7 +11,7 @@ const AddMovie = ({movie}) => {
     const user = useSelector(state => state.session.user);
     const lists = useSelector(state => Object.values(state.list))
     console.log("lists from AddMovie", lists, user)
-    const [list, setList] = useState('') //?addalbum
+    const [list, setList] = useState('') 
 
     
     useEffect(()=> {
@@ -23,16 +23,16 @@ const AddMovie = ({movie}) => {
         const formData = new FormData();
         formData.append("list_id", list)
         formData.append("movie_id", movie.id)
-        console.log("formData from addmovie", list, movie.id)
+        // console.log("formData from addmovie", list, movie.id)
         dispatch(addMovie(formData))
 
     }
     
-    const chooseList = e => setList(e.target.value) //?setaddalbum
+    const chooseList = e => setList(e.target.value) 
     
     return(
         <div>
-            <form>
+            <form onSubmit={handleAddMovie}>
                 {/* <AllLists/> */}
                 <div>Select a List</div>
                 <select onChange={chooseList} value={list}> 
@@ -42,7 +42,7 @@ const AddMovie = ({movie}) => {
                         </option>
                         )}
                 </select>
-                <button onSubmit={handleAddMovie}>
+                <button type='submit'>
                     Add Movie
                 </button>
             </form>

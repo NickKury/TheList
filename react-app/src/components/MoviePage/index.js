@@ -17,9 +17,9 @@ const MoviePage = () => {
 
     return(
         <div> Movie Page
-            <p>{movie?.title}</p>
-            <p>{movie?.description}</p>
-            <p>{movie?.platform}</p>
+            <p>movie title: {movie?.title}</p>
+            <p>movie description: {movie?.description}</p>
+            <p>movie platform: {movie?.platform}</p>
             <AddMovie movie={movie}/>
         </div>
     )

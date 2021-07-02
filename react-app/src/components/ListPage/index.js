@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { renderOneList } from "../../store/list";
 import DeleteList from "./DeleteList";
+import ListMovies from "./ListMovies";
 
 
 const ListPage = () => {
@@ -19,10 +20,11 @@ const ListPage = () => {
     return(
         <div>
             List Page
-            <p>{list?.listName}</p>
-            <p>{list?.user_id}</p>
-            <p>{list?.id}</p>
             <DeleteList list={list}/>
+            <p>listname: {list?.listName}</p>
+            <p>user id: {list?.user_id}</p>
+            <p>List id: {list?.id}</p>
+            <ListMovies/>
         </div>
     )
 }

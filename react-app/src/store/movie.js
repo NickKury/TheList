@@ -3,9 +3,9 @@ const SET_MOVIES = "movie/SET_MOVIES";
 const SET_ONE_MOVIE = "movie/SET_ONE_MOVIE";
 
 // action creators
-const setMovies = (movie) => ({
+const setMovies = (movies) => ({
     type: SET_MOVIES,
-    payload: movie
+    payload: movies
 });
 
 const setOneMovie = (movie) => ({
@@ -18,7 +18,7 @@ export const renderAllMovies = () => async(dispatch) =>{
     const res = await fetch("/api/movies");
     if(res.ok) {
         const movies = await res.json()
-        dispatch(setMovies(movies));//await
+        dispatch(setMovies(movies));
     }
     else console.log('Error in rendering all movies.')
 }
@@ -39,9 +39,12 @@ export default function movieReducer(state=initialState, action) {
     const newState = {...state};
     switch (action.type) {
         case SET_MOVIES:
-            action.payload.forEach(movie => {
-                newState[action.payload.id] = movie;
+            // console.log("actiobn.payload from moviereducer", action.payload)
+            action.payload.movies.forEach(movie => {
+                // console.log("movie from moviereducer", movie)
+                newState[movie.id] = movie;
             });
+            // console.log("state from moviereducer", newState[action.payload.id])
             return newState;
         
         case SET_ONE_MOVIE:

@@ -20,7 +20,6 @@ const CreateListForm = () => {
         console.log("form data from create list form", formData)
         dispatch(createList(formData))
         // history.pushState('/')
-
     }
 
     return(

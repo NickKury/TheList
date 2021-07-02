@@ -8,7 +8,7 @@ def seed_movies():
         platform='Netflix'
     )
     movie2 = Movie(
-        title='demoMovie',
+        title='demoMovie2',
         description='Demo movie2 description',
         platform='Netflix'
     )

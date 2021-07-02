@@ -25,6 +25,8 @@ const removeList = (list) => ({
     payload: list
 })
 
+
+
 //thunks
 export const renderAllLists = () => async(dispatch) =>{
     const res = await fetch("/api/lists");
@@ -36,6 +38,7 @@ export const renderAllLists = () => async(dispatch) =>{
     else console.log('Error in rendering all lists.')
 }
 
+
 export const renderOneList = (id) => async(dispatch) =>{
     const res = await fetch(`/api/lists/${id}`);
     if(res.ok) {
@@ -44,6 +47,7 @@ export const renderOneList = (id) => async(dispatch) =>{
     }
     else console.log(`Error in rendering list ${id}.`)
 }
+
 
 export const createList = (formData) => async(dispatch) =>{
     const res = await fetch("/api/lists/new", {
@@ -57,6 +61,7 @@ export const createList = (formData) => async(dispatch) =>{
     } else console.log("Error in creating new list")
 }
 
+
 export const addMovie = (formData) => async(dispatch) => {
     const res = await fetch("/api/lists/add", {
         method:"POST",
@@ -64,10 +69,23 @@ export const addMovie = (formData) => async(dispatch) => {
     });
     if(res.ok) {
         const list = await res.json();
-        console.log("list from list.js thunk", list)
         dispatch(setOneList(list));
     } else console.log("Error adding movie to list")
 }
+
+
+export const removeMovie = (listId, movieId) => async(dispatch) => { //! remove movie thunk
+    const res = await fetch("/api/lists/remove", {
+        method:"DELETE",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({listId, movieId})
+    })
+    if(res.ok) {
+        const list = await res.json();
+        dispatch(setOneList(list))
+    } else console.log("ERROR removing a movie")
+}
+
 
 export const deleteList = (id) => async(dispatch) =>{
     const res = await fetch(`/api/lists/delete/${id}`, {

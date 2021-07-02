@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from app.models import db, List, Movie
+from app.models import db, List, Movie, list_movie_join
 from flask_login import current_user, login_required
 
 list_routes = Blueprint('lists', __name__)
@@ -45,7 +45,20 @@ def delete_list(id):
 def add_movie():
     movie = Movie.query.get(request.form["movie_id"])
     list = List.query.get(request.form["list_id"])
+    # print('movie lists from list_routes===============',movie.lists)
     movie.lists.append(list)
     db.session.add(movie)
+    db.session.commit()
+    return list.to_dict()
+
+
+@list_routes.route('/remove', methods=["DELETE"])
+@login_required
+def delete_movie():
+    print("look here!!!! request from list_routes", request.json["movieId"])
+    # print("look here!!!! request from list_routes", request.form["movieId"])
+    movie = Movie.query.get(int(request.json["movieId"]))
+    list = List.query.get(int(request.json["listId"]))
+    list.movies.remove(movie)
     db.session.commit()
     return list.to_dict()
