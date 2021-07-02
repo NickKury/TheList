@@ -6,8 +6,13 @@ def seed_lists():
         listName ='demoList',
         user_id=1
     )
+    list2 = List(
+        listName ='demoList2',
+        user_id=1
+    )
 
     db.session.add(list1)
+    db.session.add(list2)
 
     db.session.commit()
 

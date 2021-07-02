@@ -5,9 +5,9 @@ const ADD_LIST = "list/ADD_LIST";
 const REMOVE_LIST = "list/REMOVE_LIST"
 
 // action creators
-const setLists = (list) => ({
+const setLists = (lists) => ({
     type: SET_LISTS,
-    payload: list
+    payload: lists
 });
 
 const setOneList = (list) => ({
@@ -31,6 +31,7 @@ export const renderAllLists = () => async(dispatch) =>{
     if(res.ok) {
         const lists = await res.json()
         dispatch(setLists(lists));//await
+        return lists;
     }
     else console.log('Error in rendering all lists.')
 }
@@ -63,6 +64,7 @@ export const addMovie = (formData) => async(dispatch) => {
     });
     if(res.ok) {
         const list = await res.json();
+        console.log("list from list.js thunk", list)
         dispatch(setOneList(list));
     } else console.log("Error adding movie to list")
 }
@@ -85,8 +87,8 @@ export default function listReducer(state=initialState, action) {
     const newState = {...state};
     switch (action.type) {
         case SET_LISTS:
-            action.payload.forEach(list => {
-                newState[action.payload.id] = list;
+            action.payload.lists.forEach(list => {
+                newState[list.id] = list; //!here
             });
             return newState;
         

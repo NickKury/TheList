@@ -11,6 +11,7 @@ import { authenticate } from './store/session';
 import MoviePage from './components/MoviePage';
 import ListPage from './components/ListPage';
 import UserPage from './components/UserPage';
+import HomePage from './components/HomePage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -44,7 +45,8 @@ function App() {
           <User />
         </ProtectedRoute> */}
         <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
+          <HomePage/>
+          {/* <h1>My Home Page</h1> */}
         </ProtectedRoute>
         <Route path='/movies/:id' exact={true}>
           <MoviePage/>
