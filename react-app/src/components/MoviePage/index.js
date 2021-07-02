@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { renderOneMovie } from "../../store/movie";
+import AddMovie from "./AddMovie";
 
 
 const MoviePage = () => {
@@ -15,10 +16,11 @@ const MoviePage = () => {
     }, [dispatch, id])
 
     return(
-        <div>
-            <p>{movie?.title}</p>
-            <p>{movie?.description}</p>
-            <p>{movie?.platform}</p>
+        <div> Movie Page
+            <p>movie title: {movie?.title}</p>
+            <p>movie description: {movie?.description}</p>
+            <p>movie platform: {movie?.platform}</p>
+            <AddMovie movie={movie}/>
         </div>
     )
 }
