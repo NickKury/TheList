@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import CreateListForm from './CreateListForm';
+import UserLists from './UserLists';
 
 function User() {
   const [user, setUser] = useState({});
@@ -35,6 +36,12 @@ function User() {
             </li>
         </ul>
         <CreateListForm/>
+            <div>
+              <UserLists id={userId}/>
+            </div>
+            <div>
+              Users Friends
+            </div>
       </div>
   );
 }

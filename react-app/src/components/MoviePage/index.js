@@ -20,7 +20,12 @@ const MoviePage = () => {
             <p>movie title: {movie?.title}</p>
             <p>movie description: {movie?.description}</p>
             <p>movie platform: {movie?.platform}</p>
+            <div>
             <AddMovie movie={movie}/>
+            </div>
+            <div>
+            Reviews
+            </div>
         </div>
     )
 }

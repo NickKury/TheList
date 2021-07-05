@@ -24,7 +24,12 @@ const ListPage = () => {
             <p>listname: {list?.listName}</p>
             <p>user id: {list?.user_id}</p>
             <p>List id: {list?.id}</p>
+            <div>
             <ListMovies/>
+            </div>
+            <div>
+               Change List
+            </div>
         </div>
     )
 }

@@ -17,6 +17,13 @@ def get_one_list(id):
     return list.to_dict()
 
 
+# @list_routes.route('/users/<int:id>/lists')
+# # @login_required
+# def get_user_lists(id):
+#     lists = List.query.filter(List.user_id == id).all()
+#     return {'lists': [list.to_dict() for list in lists]}
+
+
 @list_routes.route('/new', methods=["POST"])
 @login_required
 def post_list():

@@ -1,1 +1,28 @@
 /* TODO Add site wide styles */
+
+
+body {
+    margin: 0;
+    background-color: #f1f0f0;
+    color: #171717;
+    font-family: sans-serif;
+  }
+  
+  h3 {
+    margin: 0;
+  }
+  
+  ul ul {
+    margin: 0;
+  }
+  
+  button {
+    background-color: #fdc12a;
+    color: #444444;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  a {
+    color: #c70032;
+  }

@@ -38,6 +38,15 @@ export const renderAllLists = () => async(dispatch) =>{
     else console.log('Error in rendering all lists.')
 }
 
+export const renderUserLists = (id) => async(dispatch) => {
+    const res = await fetch(`/api/users/lists/${id}`);
+    if(res.ok) {
+        const lists = await res.json()
+        dispatch(setLists(lists))
+        return lists;
+    } else console.log('Error in rendering user lists.')
+}
+
 
 export const renderOneList = (id) => async(dispatch) =>{
     const res = await fetch(`/api/lists/${id}`);

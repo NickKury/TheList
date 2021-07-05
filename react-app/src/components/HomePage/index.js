@@ -10,6 +10,13 @@ const HomePage = () => {
                 All Lists
                 <AllLists/>
             </div>
+            <div>
+                Movie List
+                
+            </div>
+            <div>
+                Friends
+            </div>
         </div>
     )
 }
