@@ -4,9 +4,8 @@ import { useParams } from "react-router-dom";
 import { renderUserLists } from "../../store/list";
 
 
-function UserLists(id) {
+const UserLists = (id) => {
     const dispatch = useDispatch();
-    // const {slug} = useParams();
     const lists = useSelector(state => Object.values(state.list));
     const user = useSelector(state => state.session.user)
     

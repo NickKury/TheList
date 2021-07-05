@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { renderOneMovie } from "../../store/movie";
 import AddMovie from "./AddMovie";
+import MovieReviews from "./MovieReviews";
 
 
 const MoviePage = () => {
@@ -24,7 +25,7 @@ const MoviePage = () => {
             <AddMovie movie={movie}/>
             </div>
             <div>
-            Reviews
+            <MovieReviews id={movie.id}/>
             </div>
         </div>
     )

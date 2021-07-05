@@ -14,7 +14,7 @@ const removeUser = () => ({
 const initialState = { user: null };
 
 export const authenticate = () => async (dispatch) => {
-  const response = await fetch('/api/auth/', {
+  const response = await fetch('/api/auth', { //! /here
     headers: {
       'Content-Type': 'application/json'
     }
@@ -58,7 +58,7 @@ export const login = (email, password) => async (dispatch) => {
 }
 
 export const demo = () => async(dispatch) => {
-  const response = await fetch("/api/auth/demo", {
+  const response = await fetch('/api/auth/demo', {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
