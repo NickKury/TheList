@@ -9,7 +9,7 @@ function UserLists(id) {
     // const {slug} = useParams();
     const lists = useSelector(state => Object.values(state.list));
     const user = useSelector(state => state.session.user)
-    console.log('id from userlists', id.id)
+    
 
     useEffect(() => {
         dispatch(renderUserLists(id.id))

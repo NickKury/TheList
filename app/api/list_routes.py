@@ -14,14 +14,10 @@ def get_all_lists():
 @list_routes.route('/<int:id>')
 def get_one_list(id):
     list = List.query.get(id)
-    return list.to_dict()
+    movies = list.movies
+    return {"list": list.to_dict(), "movie": [movie.to_dict() for movie in movies]}
 
 
-# @list_routes.route('/users/<int:id>/lists')
-# # @login_required
-# def get_user_lists(id):
-#     lists = List.query.filter(List.user_id == id).all()
-#     return {'lists': [list.to_dict() for list in lists]}
 
 
 @list_routes.route('/new', methods=["POST"])
