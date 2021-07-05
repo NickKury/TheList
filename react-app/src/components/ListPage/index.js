@@ -10,7 +10,7 @@ const ListPage = () => {
     const {id} = useParams();
     const dispatch = useDispatch();
     const list = useSelector(state => state.list)
-    // console.log('list from listPage', list)
+    // console.log('list from listPage', list.list?.listName)
 
 
     useEffect(() => {
@@ -21,9 +21,9 @@ const ListPage = () => {
         <div>
             List Page
             <DeleteList list={list}/>
-            <p>listname: {list?.listName}</p>
-            <p>user id: {list?.user_id}</p>
-            <p>List id: {list?.id}</p>
+            <p>listname: {list.list?.listName}</p>
+            <p>user id: {list.list?.user_id}</p>
+            <p>List id: {list.list?.id}</p>
             <div>
             <ListMovies/>
             </div>

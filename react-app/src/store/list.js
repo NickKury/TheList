@@ -47,6 +47,13 @@ export const renderUserLists = (id) => async(dispatch) => {
     } else console.log('Error in rendering user lists.')
 }
 
+export const renderListMovies = (id) => async(dispatch) => {
+    const res = await fetch(`/api/lists/${id}`);
+    if(res.ok){
+        const list = await res.json();
+        dispatch(setOneList(list));
+    } else console.log("Error in rendering list movies")
+}
 
 export const renderOneList = (id) => async(dispatch) =>{
     const res = await fetch(`/api/lists/${id}`);

@@ -2,19 +2,19 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
 import { renderAllLists } from "../../store/list";
-import { renderAllMovies } from "../../store/movie";
+import { renderListMovies } from "../../store/list";
 import RemoveMovie from "./RemoveMovie";
 
 const ListMovies = () => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
-    const listId = useParams();
-    const movies = useSelector(state => Object.values(state.movie))
-    const a = useSelector(state => Object.values(state.list))
-    console.log('a from listmovies', movies)
+    // const listId = useParams();
+    const list = useSelector(state => Object.values(state.list))
+    const movies = list[1]
+    console.log('a from listmovies', list, movies)
 
     useEffect(() => {
-        dispatch(renderAllMovies())
+        dispatch(renderListMovies(list.list?.id))
     }, [dispatch])
 
     
