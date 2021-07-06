@@ -11,7 +11,7 @@ def get_movie_reviews(id):
 
 
 @review_routes.route('/new', methods=["POST"])
-# @login_required
+@login_required
 def post_review():
     new_review = Review(
         content=request.form['content'],
@@ -21,3 +21,22 @@ def post_review():
     db.session.add(new_review)
     db.session.commit()
     return new_review.to_dict()
+
+
+@review_routes.route('/delete/<int:id>', methods=["DELETE"])
+@login_required
+def delete_review(id):
+    review = Review.query.get(id)
+    db.session.delete(review)
+    db.session.commit()
+    return {'id':id}
+
+
+@review_routes.route('/update/<int:id>', methods=["PUT"])
+@login_required
+def update_review(id):
+    edit_review = Review.query.get(id)
+    edit_review.content = request.form["content"]
+    db.session.add(edit_review)
+    db.session.commit()
+    return edit_review.to_dict()
