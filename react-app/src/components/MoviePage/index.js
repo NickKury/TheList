@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { renderOneMovie } from "../../store/movie";
 import AddMovie from "./AddMovie";
 import MovieReviews from "./MovieReviews";
+import AddReview from "./AddReview";
 
 
 const MoviePage = () => {
@@ -22,10 +23,13 @@ const MoviePage = () => {
             <p>movie description: {movie?.description}</p>
             <p>movie platform: {movie?.platform}</p>
             <div>
-            <AddMovie movie={movie}/>
+                <AddMovie movie={movie}/>
             </div>
             <div>
-            <MovieReviews id={movie.id}/>
+                <AddReview movie={movie}/>
+            </div>
+            <div>
+                <MovieReviews id={movie.id}/>
             </div>
         </div>
     )

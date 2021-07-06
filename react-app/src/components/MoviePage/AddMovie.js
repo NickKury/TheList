@@ -11,7 +11,7 @@ const AddMovie = ({movie}) => {
     const {id} = useParams();
     const user = useSelector(state => state.session.user);
     const lists = useSelector(state => Object.values(state.list))
-    console.log("lists from AddMovie", lists, user)
+    // console.log("lists from AddMovie", lists, user)
     const [list, setList] = useState('') 
 
     
@@ -24,7 +24,7 @@ const AddMovie = ({movie}) => {
         const formData = new FormData();
         formData.append("list_id", list)
         formData.append("movie_id", movie.id)
-        console.log("formData from addmovie", id)
+        // console.log("formData from addmovie", id)
         dispatch(addMovie(formData))
         history.push(`/`)
 

@@ -19,7 +19,7 @@ def user(id):
     return user.to_dict()
 
 @user_routes.route('/lists/<int:id>')
-# @login_required
+@login_required
 def get_user_lists(id):
     lists = List.query.filter(List.user_id == id).all()
     return {'lists': [list.to_dict() for list in lists]}

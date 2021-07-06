@@ -21,7 +21,7 @@ def get_one_list(id):
 
 
 @list_routes.route('/new', methods=["POST"])
-@login_required
+# @login_required
 def post_list():
     new_list = List(
         listName=request.form["listName"],
@@ -33,7 +33,7 @@ def post_list():
 
 
 @list_routes.route('/delete/<int:id>', methods=["DELETE"])
-@login_required
+# @login_required
 def delete_list(id):
     list = List.query.get(id)
     if not list:
@@ -44,7 +44,7 @@ def delete_list(id):
 
 
 @list_routes.route('/add', methods=["POST"])
-@login_required
+# @login_required
 def add_movie():
     movie = Movie.query.get(request.form["movie_id"])
     list = List.query.get(request.form["list_id"])
@@ -56,7 +56,7 @@ def add_movie():
 
 
 @list_routes.route('/remove', methods=["DELETE"])
-@login_required
+# @login_required
 def delete_movie():
     print("look here!!!! request from list_routes", request.json["movieId"])
     # print("look here!!!! request from list_routes", request.form["movieId"])
