@@ -1,0 +1,28 @@
+.home-page{
+    display:grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-areas: 
+    "create movies search"
+    ". movies ."
+    "friends movies lists"
+}
+
+.create-list{
+    grid-area: create;
+}
+
+.all-lists{
+    grid-area: lists;
+}
+
+.movie-list{
+    grid-area: movies;
+}
+
+.friends-list{
+    grid-area: friends;
+}
+
+.search-bar{
+    grid-area: search;
+}

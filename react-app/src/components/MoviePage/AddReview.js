@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory, useParams } from "react-router-dom"
 import { addReview, renderMovieReviews } from "../../store/review"
+import { Modal } from '../../context/Modal'
 
 const AddReview = ({movie}) => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
     console.log("user from add review", user)
     const [content, setContent] = useState('');
+    const [showModal, setShowModal] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,6 +20,7 @@ const AddReview = ({movie}) => {
         formData.append('movie_id', movie.id)
 
         dispatch(addReview(formData))
+        setShowModal(false)
         setContent('')
     }
 
@@ -28,12 +31,19 @@ const AddReview = ({movie}) => {
     const updateContent = e => setContent(e.target.value)
 
     return(
-        <form onSubmit={handleSubmit}>
-            <textarea placeholder='Type your Review' onChange={updateContent} value={content}/>
+        <>
+        <button onClick={() => setShowModal(true)}>Add Review</button>
+        {showModal && (
+        <Modal onClose={() => setShowModal(false)}>
+            <form onSubmit={handleSubmit}>
+                <textarea placeholder='Type your Review' onChange={updateContent} value={content}/>
                 <button type='submit'>
                     Post Review
                 </button>
-        </form>
+            </form>
+        </Modal>
+        )}
+        </>
     )
 }
 

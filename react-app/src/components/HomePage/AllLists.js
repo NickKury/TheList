@@ -6,7 +6,7 @@ import { renderAllLists } from "../../store/list";
 const AllLists = () => {
     const dispatch = useDispatch();
     const lists = useSelector(state => Object.values(state.list))
-    console.log('lists from home page',lists)
+    // console.log('lists from home page',lists)
 
     useEffect(() => {
         dispatch(renderAllLists())
