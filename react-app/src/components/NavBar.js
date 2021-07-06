@@ -53,11 +53,11 @@ const NavBar = () => {
               Users
             </NavLink>
           </li> */}
-          <li className="navitem">
+          {/* <li className="navitem">
             <NavLink to={`/users/${user.id}/upload/`} exact={true} activeClassName="active">
               Upload Photo
             </NavLink>
-          </li>
+          </li> */}
             {showButton && (
               <button className="profile-button" onClick={dropdown}>
                 <i className="fas fa-user-circle" />
