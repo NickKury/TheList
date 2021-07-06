@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import CreateListForm from './CreateListForm';
+import Follow from './Follow';
 import UserLists from './UserLists';
 
 function User() {
@@ -38,6 +39,9 @@ function User() {
         <CreateListForm/>
             <div>
               <UserLists id={userId}/>
+            </div>
+            <div>
+              <Follow />
             </div>
             <div>
               Users Friends
