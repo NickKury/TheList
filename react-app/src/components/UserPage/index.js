@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import CreateListForm from './CreateListForm';
+import Follow from './Follow';
 import UserLists from './UserLists';
+import UserFollowList from './UserFollowList'
 
 function User() {
   const [user, setUser] = useState({});
@@ -40,7 +42,11 @@ function User() {
               <UserLists id={userId}/>
             </div>
             <div>
-              Users Friends
+              <Follow />
+            </div>
+            <div>
+              Users Follows
+              <UserFollowList id={userId}/>
             </div>
       </div>
   );

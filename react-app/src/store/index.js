@@ -4,12 +4,16 @@ import session from './session'
 import movie from './movie'
 import list from "./list";
 import review from './review';
+import follow from './follow';
+import user from './user';
 
 const rootReducer = combineReducers({
   session,
   movie,
   list,
   review,
+  follow,
+  user,
 });
 
 

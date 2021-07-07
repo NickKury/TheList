@@ -2,6 +2,7 @@ from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from sqlalchemy import func
+from .follow import followers
 
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
@@ -13,6 +14,7 @@ class User(db.Model, UserMixin):
     created_at = db.Column(db.DateTime(timezone=True), nullable=False, server_default=func.now())
     updated_at = db.Column(db.DateTime(timezone=True), nullable=False, server_default=func.now())
     reviews = db.relationship("Review", back_populates="users")
+    follows = db.relationship("User", secondary=followers, primaryjoin=(followers.c.follower_id == id), secondaryjoin=(followers.c.followed_id == id), backref=db.backref('followers', lazy='dynamic'), lazy='dynamic')
 
     @property
     def password(self):
@@ -29,5 +31,19 @@ class User(db.Model, UserMixin):
         return {
             'id': self.id,
             'username': self.username,
-            'email': self.email
+            'email': self.email,
+            'follows': [follow.username for follow in self.follows]
         }
+
+    # def is_following(self, user):
+    #     return self.followers.filter(follow.c.followed_id == userId).count() > 0
+
+
+    def follow(self, userId):
+        # if not self.is_following(userId):
+            userId.followers.append(self)
+
+
+    def unfollow(self, userId):
+        # if self.is_following(user):
+            userId.followers.remove(self)

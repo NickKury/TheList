@@ -11,6 +11,7 @@ from .api.auth_routes import auth_routes
 from .api.movie_routes import movie_routes
 from .api.list_routes import list_routes
 from .api.review_routes import review_routes
+from .api.follow_routes import follow_routes
 
 from .seeds import seed_commands
 
@@ -37,6 +38,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(movie_routes, url_prefix='/api/movies')
 app.register_blueprint(list_routes, url_prefix='/api/lists')
 app.register_blueprint(review_routes, url_prefix='/api/reviews')
+app.register_blueprint(follow_routes, url_prefix='/api/follows')
 db.init_app(app)
 Migrate(app, db)
 
