@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { renderOneList } from "../../store/list";
 import DeleteList from "./DeleteList";
 import ListMovies from "./ListMovies";
+import './ListPage.css'
 
 
 const ListPage = () => {
@@ -18,16 +19,22 @@ const ListPage = () => {
     }, [dispatch, id])
 
     return(
-        <div>
-            List Page
-            <DeleteList list={list}/>
-            <p>listname: {list.list?.listName}</p>
-            <p>user id: {list.list?.user_id}</p>
-            <p>List id: {list.list?.id}</p>
-            <div>
+        <div className='list-page'> List Page
+            <div className='delete-list'>
+            </div>
+            <div className='list-info'>
+                <p>listname: {list.list?.listName}</p>
+                <p>user id: {list.list?.user_id}</p>
+                <p>List id: {list.list?.id}</p>
+                <DeleteList list={list}/>
+            </div>
+            <div className='list-movies'>
             <ListMovies/>
             </div>
-            <div>
+            <div className='share-list'>
+                Share
+            </div>
+            <div className='change-list'>
                Change List
             </div>
         </div>

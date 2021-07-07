@@ -23,7 +23,8 @@ const ListMovies = () => {
         <div>
             {movies?.map((movie) => (
                 <div key={movie?.id}> 
-                    moviename: {movie.title}
+                    Title: {movie.title}
+                    <img src={movie?.poster_path} />
                   <RemoveMovie movie={movie}/>  
                 </div>
             ))}
