@@ -12,4 +12,5 @@ followers = db.Table('followers',
     #     return{
     #         'follower_id': self.follower_id,
     #         'followed_id': self.followed_id
+
     #     }

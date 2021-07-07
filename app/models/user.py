@@ -31,11 +31,12 @@ class User(db.Model, UserMixin):
         return {
             'id': self.id,
             'username': self.username,
-            'email': self.email
+            'email': self.email,
+            'follows': [follow.username for follow in self.follows]
         }
 
     # def is_following(self, user):
-    #     return self.follow.filter(followers.c.followed_id == user.id).count() > 0
+    #     return self.followers.filter(follow.c.followed_id == userId).count() > 0
 
 
     def follow(self, userId):
