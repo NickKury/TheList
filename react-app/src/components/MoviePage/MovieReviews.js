@@ -8,7 +8,8 @@ import EditReview from "./EditReview";
 const MovieReviews = (movie) => {
     const dispatch = useDispatch();
     const reviews = useSelector(state => Object.values(state.review));
-    console.log("review from movie reviews", movie.id)
+    const user = useSelector(state => state.session) //current user
+    console.log("review from movie reviews", user.user?.id, reviews[0]?.user.id)
 
     useEffect(() => {
         dispatch(renderMovieReviews(movie?.id))
@@ -18,10 +19,14 @@ const MovieReviews = (movie) => {
         <div> Movie Reviews
             {reviews?.map((review) => (
                 <div key={review.id}>
-                    {review?.user_id}
+                    <p>{review?.user.username}</p>
                     {review?.content}
+                    {user.user.id === review.user.id
+                    ? <div>
                     <EditReview review={review}/>
                     <DeleteReview review={review}/>
+                    </div>
+                    : null}
                 </div>
             ))}
         </div>
