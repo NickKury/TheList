@@ -18,10 +18,10 @@ const MovieReviews = (movie) => {
     return(
         <div> Movie Reviews
             {reviews?.map((review) => (
-                <div key={review.id}>
-                    <p>{review?.user.username}</p>
+                <div key={review?.id}>
+                    <p>{review?.user?.username}</p>
                     {review?.content}
-                    {user.user.id === review.user.id
+                    {user.user?.id === review.user?.id
                     ? <div>
                     <EditReview review={review}/>
                     <DeleteReview review={review}/>

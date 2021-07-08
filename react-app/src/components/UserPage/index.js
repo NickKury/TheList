@@ -46,7 +46,7 @@ function User() {
           ? 
           <div>
               <CreateListForm/>
-            </div>
+          </div>
           : 
             <div>
               <Follow />

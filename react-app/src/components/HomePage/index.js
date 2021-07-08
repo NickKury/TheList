@@ -7,7 +7,7 @@ import './HomePage.css'
 
 const HomePage = () => {
     const {user} = useSelector(state => (state.session));
-    console.log('user from home page', user.id)
+    console.log('user from home page', user)
 
 
     return(
@@ -26,8 +26,8 @@ const HomePage = () => {
                 <AllMovies/>
             </div>
             <div className='friends-list'>
-                {`${user.username} Follows`}
-                <UserFollowList id={user.id}/>
+                {`${user?.username} Follows`}
+                <UserFollowList id={user?.id}/>
             </div>
             <div className='search-bar'> 
                 Search

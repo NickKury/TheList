@@ -9,9 +9,9 @@ const Follow = () => {
     const { userId }  = useParams();
     const user = useSelector(state => state.user) //userpage user
     const currentUser = useSelector(state => state.session) // session user
-    const followings = currentUser.user.follows
-    console.log('user from Follow', user.username, followings)
-    console.log(followings.includes(user.username))
+    const followings = currentUser.user?.follows
+    // console.log('user from Follow', user.username, followings)
+    // console.log(followings.includes(user.username))
     
 
     const handleFollow = (e) => {
@@ -28,7 +28,7 @@ const Follow = () => {
 
     return(
         <>
-        {followings.includes(user.username)
+        {followings?.includes(user.username)
         ?
                 <form onSubmit={handleUnfollow}>
                     <button type='submit'>

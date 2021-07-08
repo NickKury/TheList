@@ -25,9 +25,11 @@ const ListMovies = () => {
         <div>
             {movies?.map((movie) => (
                 <div key={movie?.id}> 
-                      <Link to={`/movies/${movie.id}`}> Movie: {movie?.title} </Link>
                     <img src={movie?.poster_path} />
-                  <RemoveMovie movie={movie}/>  
+                    <div>
+                        <Link to={`/movies/${movie.id}`}> Movie: {movie?.title} </Link>
+                        <RemoveMovie movie={movie}/>  
+                    </div>
                 </div>
             ))}
         </div>

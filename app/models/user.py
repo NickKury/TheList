@@ -32,8 +32,8 @@ class User(db.Model, UserMixin):
             'id': self.id,
             'username': self.username,
             'email': self.email,
-            'follows': [follow.username for follow in self.follows]
-            # 'follows': [follow.id for follow in self.follows]
+            'follows': [follow.username for follow in self.follows] 
+            # 'follows': [follow.id for follow in self.follows] add to_dict()
         }
 
     # def is_following(self, user):
