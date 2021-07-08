@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { renderAllMovies } from "../../store/movie";
+import { Link } from "react-router-dom"
 
 const AllMovies = () => {
     const dispatch = useDispatch();
@@ -14,7 +15,10 @@ const AllMovies = () => {
         <div>
             {movies?.map((movie) => (
                 <div key={movie?.id}>
-                    Movie: {movie?.title}
+                    <div>
+                   <Link to={`/movies/${movie.id}`}> Movie: {movie?.title} </Link>
+                   </div>
+                    <img src={movie?.poster_path}/>
                 </div>
             ))}
         </div>

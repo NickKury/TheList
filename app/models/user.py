@@ -33,6 +33,7 @@ class User(db.Model, UserMixin):
             'username': self.username,
             'email': self.email,
             'follows': [follow.username for follow in self.follows]
+            # 'follows': [follow.id for follow in self.follows]
         }
 
     # def is_following(self, user):

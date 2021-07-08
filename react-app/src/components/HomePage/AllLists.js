@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { renderAllLists } from "../../store/list";
+import { Link } from "react-router-dom"
+
 
 
 const AllLists = () => {
@@ -16,7 +18,7 @@ const AllLists = () => {
        <div>
            {lists?.map((list) => (
                <div key={list?.id}>
-                   listname: {list?.listName}
+                 <Link to={`/lists/${list.id}`}>  listname: {list?.listName} </Link>
                </div>
            ))}
        </div>
