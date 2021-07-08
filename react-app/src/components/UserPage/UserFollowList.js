@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { getUser } from "../../store/user";
+import { Link } from "react-router-dom"
 
 const UserFollowList = ({id}) => {
 
@@ -9,7 +10,7 @@ const UserFollowList = ({id}) => {
     // const {id} = useParams()
     const user = useSelector(state => state.user)
     const followings = user.follows
-    console.log('user from userfollowlist', user)
+    console.log('followings from userfollowlist', user.follows)
 
     useEffect(() => {
         dispatch(getUser(id))

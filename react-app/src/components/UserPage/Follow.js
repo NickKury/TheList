@@ -11,19 +11,13 @@ const Follow = () => {
 
     const handleFollow = (e) => {
         e.preventDefault();
-        console.log(userId)
-        // const formData = new FormData();
-        // formData.append('userId', userId);
-        // console.log("form data from follow form", formData)
+        // console.log(userId)
         dispatch(followUser(userId))
     }
 
     const handleUnfollow = (e) => {
         e.preventDefault();
-        console.log(userId)
-        // const formData = new FormData();
-        // formData.append('userId', userId);
-        // console.log("form data from follow form", formData)
+        // console.log(userId)
         dispatch(unfollowUser(userId))
     }
 

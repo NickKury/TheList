@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom"
 import { renderAllLists } from "../../store/list";
 import { renderListMovies } from "../../store/list";
 import RemoveMovie from "./RemoveMovie";
+import { Link } from "react-router-dom";
+
 
 const ListMovies = () => {
     const dispatch = useDispatch();
@@ -11,7 +13,7 @@ const ListMovies = () => {
     // const listId = useParams();
     const list = useSelector(state => Object.values(state.list))
     const movies = list[1]
-    console.log('a from listmovies', list, movies)
+    // console.log('a from listmovies', list, movies)
 
     useEffect(() => {
         dispatch(renderListMovies(list.list?.id))
@@ -23,7 +25,8 @@ const ListMovies = () => {
         <div>
             {movies?.map((movie) => (
                 <div key={movie?.id}> 
-                    moviename: {movie.title}
+                      <Link to={`/movies/${movie.id}`}> Movie: {movie?.title} </Link>
+                    <img src={movie?.poster_path} />
                   <RemoveMovie movie={movie}/>  
                 </div>
             ))}

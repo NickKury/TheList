@@ -1,0 +1,27 @@
+.list-page{
+    display:grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-areas: 
+    "share movies info"
+    "change movies ."
+}
+
+.delete-list{
+    grid-area:delete;
+}
+
+.list-info{
+    grid-area:info;
+}
+
+.list-movies{
+    grid-area:movies;
+}
+
+.share-list{
+    grid-area:share;
+}
+
+.change-list{
+    grid-area:change;
+}

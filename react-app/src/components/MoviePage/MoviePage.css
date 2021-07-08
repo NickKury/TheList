@@ -1,0 +1,38 @@
+.movie-page{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 
+    "poster title"
+    "poster description"
+    "poster platform"
+    "poster add"
+    "review review"
+}
+
+.movie-poster{
+    grid-area:poster;
+}
+
+.movie-title{
+    grid-area:title;
+}
+
+.movie-poster{
+    grid-area:title;
+}
+
+.movie-description{
+    grid-area:description;
+}
+
+.movie-platform{
+    grid-area:platform;
+}
+
+.add-movie{
+    grid-area:add;
+}
+
+.review-div{
+    grid-area:review;
+}
