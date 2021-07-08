@@ -10,8 +10,9 @@ function User() {
   const [user, setUser] = useState({});
   const { userId }  = useParams(); //gets userpage user
   const currentUser = useSelector(state => (state.session))
+  const followings = user.follows
 
-  console.log('user from user page', currentUser.user.id, userId)
+  // console.log('followings from user page', userId, followings)
 
   useEffect(() => {
     if (!userId) {
@@ -42,15 +43,17 @@ function User() {
             </li>
         </ul>
         {currentUser.user?.id == userId 
-          ? <div>
+          ? 
+          <div>
               <CreateListForm/>
             </div>
-          : null}
-            <div>
-              <UserLists id={userId}/>
-            </div>
+          : 
             <div>
               <Follow />
+            </div>
+          }
+            <div>
+              <UserLists id={userId}/>
             </div>
             <div>
               Users Follows
