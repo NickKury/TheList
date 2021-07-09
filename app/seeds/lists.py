@@ -18,13 +18,16 @@ def seed_lists():
         listName ='Action',
         user_id=2
     )
-    list3 = List(
+    list5 = List(
         listName ='Animated',
         user_id=2
     )
 
     db.session.add(list1)
     db.session.add(list2)
+    db.session.add(list3)
+    db.session.add(list4)
+    db.session.add(list5)
 
     db.session.commit()
 
