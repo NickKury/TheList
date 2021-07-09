@@ -48,8 +48,8 @@ export default function movieReducer(state=initialState, action) {
             return newState;
         
         case SET_ONE_MOVIE:
-            const oneMovieState = {...action.payload};
-            return oneMovieState;
+           return {...action.payload};
+            // return oneMovieState;
 
         default:
             return state;

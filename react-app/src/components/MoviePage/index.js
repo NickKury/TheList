@@ -12,7 +12,7 @@ const MoviePage = () => {
     const dispatch = useDispatch();
     const movie = useSelector(state => state.movie)
     const user = useSelector(state => state.session)
-    console.log('user from movie page', user)
+    // console.log('user from movie page', user)
 
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const MoviePage = () => {
     return(
         <div className='movie-page'> 
             <div>
-                <img className='movie-poster' src={movie?.poster_path} />
+                <img className='movie-poster' src={movie?.poster_path} alt={movie.title}/>
             </div>
             <div className='movie-info'>
              <div>

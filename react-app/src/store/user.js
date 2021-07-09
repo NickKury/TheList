@@ -17,7 +17,7 @@ export const getUser = (id) => async(dispatch) => {
 const initialState = {};
 
 export default function userReducer(state=initialState, action) {
-    const newState = {...state};
+    // const newState = {...state};
     switch(action.type) {
         case GET_USER:
             // newState[action.payload.id] = action.payload;

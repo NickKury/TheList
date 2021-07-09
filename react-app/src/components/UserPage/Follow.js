@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { followUser, unfollowUser } from "../../store/follow";
-import { useHistory, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 
 
 const Follow = () => {

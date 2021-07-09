@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { useHistory, useParams } from "react-router-dom"
+// import { useHistory, useParams } from "react-router-dom"
 import { addReview, renderMovieReviews } from "../../store/review"
 import { Modal } from '../../context/Modal'
 
 const AddReview = ({movie}) => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
-    console.log("user from add review", user)
+    // console.log("user from add review", user)
     const [content, setContent] = useState('');
     const [showModal, setShowModal] = useState(false);
 
@@ -26,7 +26,7 @@ const AddReview = ({movie}) => {
 
     useEffect(() => {
         dispatch(renderMovieReviews(movie.id))
-    }, [dispatch])
+    }, [dispatch, movie.id]) //added
 
     const updateContent = e => setContent(e.target.value)
 

@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { getUser } from "../../store/user";
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 
 const UserFollowList = ({id}) => {
 
@@ -14,12 +14,12 @@ const UserFollowList = ({id}) => {
 
     useEffect(() => {
         dispatch(getUser(id))
-    }, [dispatch])
+    }, [dispatch, id])
 
     return( 
         <div>
             {followings?.map((follow) => (
-                <div>
+                <div key={follow}>
                     {follow}
                 </div>
             ))}

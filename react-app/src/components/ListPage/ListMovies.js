@@ -1,33 +1,34 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
-import { renderAllLists } from "../../store/list";
+// import { renderAllLists } from "../../store/list";
 import { renderListMovies } from "../../store/list";
 import RemoveMovie from "./RemoveMovie";
 import { Link } from "react-router-dom";
-
+//try params
 
 const ListMovies = () => {
     const dispatch = useDispatch();
-    const user = useSelector(state => state.session.user);
-    // const listId = useParams();
-    const list = useSelector(state => Object.values(state.list))
-    const movies = list[1]
-    // console.log('a from listmovies', list, movies)
+    // const user = useSelector(state => state.session?.user);
+    const listId = useParams(); //?
+    const list = useSelector(state => (state?.list))
+    const listMovies = list.movie
+    // const movies = list[1]
+    // console.log('movies from listmovies', movies, list?.movie, listMovies)
 
     useEffect(() => {
-        dispatch(renderListMovies(list.list?.id))
-    }, [dispatch])
+        dispatch(renderListMovies(listId.id))
+    }, [dispatch, listId.id]) //added
 
     
 
     return(
         <div>
-            {movies?.map((movie) => (
-                <div key={movie?.id}> 
-                    <img src={movie?.poster_path} />
+            {listMovies?.map((movie) => (
+                <div key={movie?.title}> 
+                    <img src={movie?.poster_path} alt={movie.title} />
                     <div>
-                        <Link to={`/movies/${movie.id}`}> Movie: {movie?.title} </Link>
+                        <Link to={`/movies/${movie?.id}`}> Movie: {movie?.title} </Link>
                         <RemoveMovie movie={movie}/>  
                     </div>
                 </div>

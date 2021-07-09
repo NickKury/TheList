@@ -17,7 +17,7 @@ const AllMovies = () => {
         <div>
             {movies?.map((movie) => (
                 <div key={movie?.id}>
-                    <img src={movie?.poster_path}/>
+                    <img src={movie?.poster_path} alt={movie.title}/>
                     <div>
                    <Link to={`/movies/${movie.id}`}> Movie: {movie?.title} </Link>
                    {user.user !== null

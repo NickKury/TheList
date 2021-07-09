@@ -22,4 +22,4 @@ def user(id):
 # @login_required
 def get_user_lists(id):
     lists = List.query.filter(List.user_id == id).all()
-    return {'lists': [list.to_dict() for list in lists]}
+    return {list.listName: list.to_dict() for list in lists}

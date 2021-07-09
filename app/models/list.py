@@ -21,4 +21,5 @@ class List(db.Model):
             'created_at': self.created_at,
             'updated_at': self.updated_at,
             'movie_id':[movie.id for movie in self.movies]
+            # "movies":[movie for movie in self.movies] #changed
         }

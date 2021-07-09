@@ -7,7 +7,7 @@ import './HomePage.css'
 
 const HomePage = () => {
     const {user} = useSelector(state => (state.session));
-    console.log('user from home page', user)
+    // console.log('user from home page', user)
 
 
     return(
@@ -17,7 +17,7 @@ const HomePage = () => {
             <CreateListForm/>
         </div>
         
-            <div classname='all-lists'>
+            <div className='all-lists'>
                 All Lists
                 <AllLists/>
             </div>

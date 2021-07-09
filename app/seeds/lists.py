@@ -3,12 +3,24 @@ from app.models import db, List
 
 def seed_lists():
     list1 = List(
-        listName ='demoList',
+        listName ='My Fav Movies',
         user_id=1
     )
     list2 = List(
-        listName ='demoList2',
+        listName ='Need to watch',
         user_id=1
+    )
+    list3 = List(
+        listName ='Syfy',
+        user_id=2
+    )
+    list4 = List(
+        listName ='Action',
+        user_id=2
+    )
+    list3 = List(
+        listName ='Animated',
+        user_id=2
     )
 
     db.session.add(list1)

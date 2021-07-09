@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import {useParams} from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { renderMovieReviews } from "../../store/review";
 import DeleteReview from "./DeleteReview";
@@ -6,14 +7,15 @@ import EditReview from "./EditReview";
 
 
 const MovieReviews = (movie) => {
+    const movieId = useParams();
     const dispatch = useDispatch();
     const reviews = useSelector(state => Object.values(state.review));
     const user = useSelector(state => state.session) //current user
-    console.log("review from movie reviews", user.user?.id, reviews[0]?.user.id)
+    console.log("movie from movie reviews", movie, movieId)
 
     useEffect(() => {
-        dispatch(renderMovieReviews(movie?.id))
-    }, [dispatch, movie])
+        dispatch(renderMovieReviews(movieId.id))
+    }, [dispatch, movieId.id]) //removed movie
 
     return(
         <div> Movie Reviews
