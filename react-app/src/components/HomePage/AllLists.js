@@ -8,7 +8,7 @@ import { Link } from "react-router-dom"
 const AllLists = () => {
     const dispatch = useDispatch();
     const lists = useSelector(state => Object.values(state.list))
-    // console.log('lists from home page',lists)
+    console.log('lists from home page',lists)
 
     useEffect(() => {
         dispatch(renderAllLists())
@@ -17,7 +17,7 @@ const AllLists = () => {
     return(
        <div>
            {lists?.map((list) => (
-               <div key={list?.id}>
+               <div key={list.listName}>
                  <Link to={`/lists/${list.id}`}>  listname: {list?.listName} </Link>
                </div>
            ))}

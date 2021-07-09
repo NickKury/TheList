@@ -48,16 +48,6 @@ const NavBar = () => {
               Home
             </NavLink>
           </li>
-          {/* <li className="navitem">
-            <NavLink to="/users" exact={true} activeClassName="active">
-              Users
-            </NavLink>
-          </li> */}
-          {/* <li className="navitem">
-            <NavLink to={`/users/${user.id}/upload/`} exact={true} activeClassName="active">
-              Upload Photo
-            </NavLink>
-          </li> */}
             {showButton && (
               <button className="profile-button" onClick={dropdown}>
                 <i className="fas fa-user-circle" />

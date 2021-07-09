@@ -12,7 +12,8 @@ const ListPage = () => {
     const {id} = useParams();
     const dispatch = useDispatch();
     const list = useSelector(state => state.list)
-    console.log('list from listPage', list)
+    const currentUser = useSelector(state => (state.session))
+    // console.log('list from listPage', list.list?.user_id, currentUser.user?.id)
 
 
     useEffect(() => {
@@ -21,15 +22,17 @@ const ListPage = () => {
 
     return(
         <div className='list-page'> List Page
-            <div className='delete-list'>
-            </div>
+            {/* <div className='delete-list'>
+            </div> */}
             <div className='list-info'>
                 <strong>{list.list?.listName}</strong>
                 <div>
-                <Link to={`/users/${list.list?.user_id}`}>See more lists from this user</Link>
-                {/* <p>List id: {list.list?.id}</p> */}
+                    <Link to={`/users/${list.list?.user_id}`}>See more lists from this user</Link>
                 </div>
+            {list.list?.user_id === currentUser.user?.id
+            ?
                 <DeleteList list={list}/>
+            : null}
             </div>
             <div className='list-movies'> {`${list.list?.listName}'s Movies`}
             <ListMovies/>

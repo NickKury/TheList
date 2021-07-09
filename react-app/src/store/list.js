@@ -51,6 +51,7 @@ export const renderListMovies = (id) => async(dispatch) => {
     const res = await fetch(`/api/lists/${id}`);
     if(res.ok){
         const list = await res.json();
+        console.log('list from thunk====================================', list)
         dispatch(setOneList(list));
     } else console.log("Error in rendering list movies")
 }
@@ -121,16 +122,17 @@ export default function listReducer(state=initialState, action) {
     const newState = {...state};
     switch (action.type) {
         case SET_LISTS:
-            action.payload.lists.forEach(list => {
-                newState[list.id] = list; //!here
-            });
-            return newState;
+            // action.payload.lists.forEach(list => {
+            //     newState[list.id] = list; //!here
+            // });
+            // return newState;
+            return {...action.payload};
         
         case SET_ONE_LIST:
             // newState[action.payload.id] = action.payload;
             // return newState;
-            const oneListState = {...action.payload};
-            return oneListState;
+            return {...action.payload};
+            // return oneListState;
 
         case ADD_LIST:
             newState[action.payload.id] = action.payload;

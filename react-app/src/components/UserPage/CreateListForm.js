@@ -1,5 +1,5 @@
 import { useState} from "react"
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector} from 'react-redux'
 import { createList } from '../../store/list'
 import { Modal } from '../../context/Modal'
@@ -7,6 +7,9 @@ import { Modal } from '../../context/Modal'
 const CreateListForm = () => {
    
     const dispatch = useDispatch();
+    const currentUser = useSelector(state => (state.session))
+    const history = useHistory();
+    // console.log('currentuser from create form', currentUser)
 
     const [listName, setListName] = useState('')
     const [showModal, setShowModal] = useState(false)
@@ -18,14 +21,19 @@ const CreateListForm = () => {
 
         const formData = new FormData();
         formData.append("listName", listName);
-        console.log("form data from create list form", formData)
+        // console.log("form data from create list form", formData)
         dispatch(createList(formData))
         setShowModal(false)
+        setListName('')
+        history.push(`/users/${currentUser?.user?.id}`)
         
     }
 
     return(
         <>
+        {currentUser !== null
+        ?
+        <div>
             <button onClick={() => setShowModal(true)}>Create a New List</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
@@ -37,6 +45,9 @@ const CreateListForm = () => {
                     </form>
                 </Modal>
             )}
+        </div>
+        : null
+        }
         </>
     )
 }

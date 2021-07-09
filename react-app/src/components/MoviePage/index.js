@@ -11,6 +11,8 @@ const MoviePage = () => {
     const {id} = useParams();
     const dispatch = useDispatch();
     const movie = useSelector(state => state.movie)
+    const user = useSelector(state => state.session)
+    // console.log('user from movie page', user)
 
 
     useEffect(() => {
@@ -20,7 +22,7 @@ const MoviePage = () => {
     return(
         <div className='movie-page'> 
             <div>
-                <img className='movie-poster' src={movie?.poster_path} />
+                <img className='movie-poster' src={movie?.poster_path} alt={movie.title}/>
             </div>
             <div className='movie-info'>
              <div>
@@ -32,14 +34,20 @@ const MoviePage = () => {
              <div>
                 <p className='movie-platform'>movie platform: {movie?.platform}</p>
             </div>
-            <div className='add-movie'>
-            <AddMovie movie={movie}/>
-            </div>
+            {user.user !== null
+            ?
+                <div className='add-movie'>
+                    <AddMovie movie={movie}/>
+                </div>
+            : null}
             </div>
             <div className='review-div'>
-                <div>
-                    <AddReview movie={movie}/>
-                </div>
+                {user.user !== null
+                ?
+                    <div >
+                        <AddReview movie={movie}/>
+                    </div>
+                : null}
                 <div>
                     <MovieReviews id={movie.id}/>
                 </div>
