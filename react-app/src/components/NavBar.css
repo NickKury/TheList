@@ -1,10 +1,20 @@
 nav {
     background-color: darkblue;
-    height: 68px;
+    height: 60px;
+    width:100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    position:fixed;
+    margin:0;
+    padding-left:20px;
+    padding-right:20px;
   }
+
+body{
+    /* color:black; */
+  margin:0;
+}
   
   .navmenu {
     /* the UL that contains NavLinks */
@@ -14,9 +24,11 @@ nav {
     grid-gap: 10px;
     list-style-type: none;
     font-family: sans-serif;
-    width: 70vw;
+    width: 100%;
     justify-content: end;
-    margin-right: 2rem;
+    /* margin-right: 2rem; */
+    /* margin:0; */
+    
   }
   
   .navitem {
@@ -24,10 +36,13 @@ nav {
     display: flex;
     align-items: center;
     height: 2rem;
-    background-color: #f1f0f0;
-    padding: 10px;
+    /* background-color: #f1f0f0; */
+    background-color: #fdc12a;
+    /* color:black; */
+    padding: 20px;
     border-radius: 2px;
     box-sizing: border-box;
+    
   }
   
   .navitem:hover {
@@ -46,6 +61,10 @@ nav {
     text-decoration: none;
   }
   
+  #nav-button{
+    color:black;
+  }
+    
   .profile-dropdown {
     position: relative;
     top: 30px;
@@ -67,3 +86,7 @@ nav {
     padding: 9px;
     border-radius: 2px;
   }
+
+/* .button.profile-button{
+  color:red;
+} */

@@ -2,8 +2,10 @@
     display:grid;
     grid-template-columns: 25% 50% 25%;
     grid-template-areas: 
-    "share movies info"
-    "change movies ."
+    "share . info"
+    "change movies .";
+    padding:60px;
+    line-height:30px;
 }
 
 .delete-list{
@@ -16,6 +18,8 @@
 
 .list-movies{
     grid-area:movies;
+    line-height:30px;
+    /* line-height: 20px; */
 }
 
 .share-list{
@@ -24,4 +28,9 @@
 
 .change-list{
     grid-area:change;
+}
+
+#movie{
+    border-bottom:solid white 2px;
+
 }

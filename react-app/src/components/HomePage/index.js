@@ -12,21 +12,20 @@ const HomePage = () => {
 
     return(
         <div className='home-page'>
-        <h2>Home Page!!</h2>
+        <h1>Welcome to TheList</h1>
         <div className='create-list'>
             <CreateListForm/>
         </div>
         
             <div className='all-lists'>
-                All Lists
+                All Lists:
                 <AllLists/>
             </div>
             <div className='movie-list'>
-                Movie List
                 <AllMovies/>
             </div>
             <div className='friends-list'>
-                {`${user?.username} Follows`}
+                {`${user?.username} Follows:`}
                 <UserFollowList id={user?.id}/>
             </div>
             <div className='search-bar'> 

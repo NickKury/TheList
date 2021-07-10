@@ -12,16 +12,16 @@ const AllLists = () => {
 
     useEffect(() => {
         dispatch(renderAllLists())
-    }, [dispatch])
+    }, [dispatch, lists])
 
     return(
-       <div>
+       <ul>
            {lists?.map((list) => (
-               <div key={list.listName}>
-                 <Link to={`/lists/${list.id}`}>  listname: {list?.listName} </Link>
-               </div>
+               <li key={list.listName}>
+                 <Link to={`/lists/${list.id}`}>{list?.listName} </Link>
+               </li>
            ))}
-       </div>
+       </ul>
     )
 }
 

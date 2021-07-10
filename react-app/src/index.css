@@ -2,10 +2,19 @@
 
 
 body {
-    margin: 0;
-    background-color: #f1f0f0;
-    color: #171717;
-    font-family: sans-serif;
+    /* margin: 0; */
+    /* background-color: #f1f0f0; */
+    /* color: #171717; */
+    background:url(https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2851&q=80);
+    background-size:100%;
+    position:relative;
+    background-attachment: fixed;
+    /* background:url(https://images.unsplash.com/photo-1527979809431-ea3d5c0c01c9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2884&q=80); */
+    /* background:url(https://images.unsplash.com/photo-1617914309185-9e63b3badfca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80); */
+    /* background:url(); */
+    /* background:url(); */
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
   }
   
   h3 {
@@ -22,7 +31,13 @@ body {
     border-radius: 5px;
     border: none;
   }
-  
+
+
   a {
-    color: #c70032;
+    color:white;
+    text-decoration:none;
+    /* color: #c70032; */
   }
+  a:hover{
+    color:blue;
+}

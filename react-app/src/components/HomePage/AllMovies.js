@@ -16,10 +16,10 @@ const AllMovies = () => {
     return(
         <div>
             {movies?.map((movie) => (
-                <div key={movie?.id}>
+                <div key={movie?.id} className='all-movies'>
                     <img src={movie?.poster_path} alt={movie.title}/>
                     <div>
-                   <Link to={`/movies/${movie.id}`}> Movie: {movie?.title} </Link>
+                   <Link to={`/movies/${movie.id}`}>{movie?.title} </Link>
                    {user.user !== null
                 ?
                     <>

@@ -44,7 +44,7 @@ const NavBar = () => {
       <ul className="navmenu">
         {user? (<>
           <li className="navitem">
-            <NavLink to="/" exact={true} activeClassName="active">
+            <NavLink to="/" exact={true} activeClassName="active" id='nav-button'>
               Home
             </NavLink>
           </li>
@@ -54,8 +54,8 @@ const NavBar = () => {
               </button>
             )}
             {showDropdown && (
-              <div className="profile-dropdown">
-                <div className="profile-dropdown-buttons">Hello, <NavLink to={`/users/${user.id}`}>{user.username}</NavLink>!</div>
+              <div className="profile-dropdown" id='nav-button'>
+                <div className="profile-dropdown-buttons">Hello, <NavLink to={`/users/${user.id}`} id='nav-button'>{user.username}</NavLink>!</div>
                 {/* <div className="profile-dropdown-buttons"> <NavLink to={`/users/${user.id}/photos`}>Your Photos</NavLink></div> */}
                 <div className="profile-dropdown-buttons"> <LogoutButton /> </div>
               </div>

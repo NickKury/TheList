@@ -18,11 +18,12 @@ const MovieReviews = (movie) => {
     }, [dispatch, movieId.id]) //removed movie
 
     return(
-        <div> Movie Reviews
+        <div >
+            <p id='review-header'>Reviews</p>
             {reviews?.map((review) => (
-                <div key={review?.id}>
-                    <p>{review?.user?.username}</p>
+                <div id='review' key={review?.id}>
                     {review?.content}
+                    <p>Posted by: {review?.user?.username}</p>
                     {user.user?.id === review.user?.id
                     ? <div>
                     <EditReview review={review}/>

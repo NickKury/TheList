@@ -1,28 +1,70 @@
+/* a:hover{
+    color:darkblue;
+} */
+/* a:visited{
+    color:blue;
+} */
+
 .home-page{
+    /* margin-top:100px; */
     display:grid;
     grid-template-columns: 25% 50% 25%;
     grid-template-areas: 
-    "create movies search"
-    ". movies ."
+    /* "..." */
+    "create . search"
+    /* "friends . lists" */
     "friends movies lists"
 }
 
+h1{
+    margin:70px 10px 10px 100px;
+}
+
 .create-list{
+    margin:70px 10px 0px 10px;
     grid-area: create;
 }
 
 .all-lists{
+    
+    margin:50px 20px;
     grid-area: lists;
+    border:2px white solid;
+    width:50%;
+    height:fit-content;
+    line-height:30px;
+    padding:10px;
 }
 
 .movie-list{
     grid-area: movies;
+    /* background-color:#ccc; */
+    width:80%;
+    /* margin-top:10px; */
+    display:flex;
+    justify-content:center;
+    /* align-items:center; */
+    /* border:2px white solid; */
+    padding: 20px
 }
 
 .friends-list{
+    margin:50px 20px;
     grid-area: friends;
+    /* border:2px black solid; */
+    width:50%;
+    height:fit-content;
+    line-height:30px;
 }
 
 .search-bar{
+    margin:70px 10px 10px 100px;
     grid-area: search;
+}
+
+.all-movies{
+    padding-bottom:20px;
+    padding-left:100px;
+    border-bottom:solid 1px white;
+    margin-bottom:10px;
 }

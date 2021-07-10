@@ -26,13 +26,13 @@ const MoviePage = () => {
             </div>
             <div className='movie-info'>
              <div>
-                <p className='movie-title'>movie title: {movie?.title}</p>
+                <h1 className='movie-title'>{movie?.title}</h1>
             </div>
              <div>
-                <p className='movie-description'>movie description: {movie?.description}</p>
+                <p className='movie-description'>Description: {movie?.description}</p>
             </div>
              <div>
-                <p className='movie-platform'>movie platform: {movie?.platform}</p>
+                <p className='movie-platform'>Where to watch: {movie?.platform}</p>
             </div>
             {user.user !== null
             ?
@@ -48,7 +48,7 @@ const MoviePage = () => {
                         <AddReview movie={movie}/>
                     </div>
                 : null}
-                <div>
+                <div className='review-list'>
                     <MovieReviews id={movie.id}/>
                 </div>
             </div>

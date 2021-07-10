@@ -5,6 +5,7 @@ import CreateListForm from './CreateListForm';
 import Follow from './Follow';
 import UserLists from './UserLists';
 import UserFollowList from './UserFollowList'
+import './UserPage.css'
 
 function User() {
   const [user, setUser] = useState({});
@@ -30,32 +31,32 @@ function User() {
   }
 
   return (
-      <div>
-        <ul>
-            <li>
+      <div className='user-page'>
+        <ul className='user-info'>
+            {/* <li>
                 <strong>User Id</strong> {userId}
-            </li>
-            <li>
+            </li> */}
+            <div>
                 <strong>Username</strong> {user.username}
-            </li>
-            <li>
+            </div>
+            <div>
                 <strong>Email</strong> {user.email}
-            </li>
+            </div>
+            <div>
+            {currentUser.user?.id === Number(userId) 
+              ? 
+                  <CreateListForm/>
+              : 
+                // <div>
+                  <Follow />
+                // </div>
+              }
+              </div>
         </ul>
-        {currentUser.user?.id === Number(userId) 
-          ? 
-          <div>
-              <CreateListForm/>
-          </div>
-          : 
-            <div>
-              <Follow />
-            </div>
-          }
-            <div>
+            <strong className='user-lists'> {user.username}'s Lists
               <UserLists id={userId}/>
-            </div>
-            <div>
+            </strong>
+            <div className='user-follows'>
               Users Follows
               <UserFollowList id={userId}/>
             </div>

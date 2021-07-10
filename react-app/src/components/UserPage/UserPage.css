@@ -1,0 +1,25 @@
+.user-page{
+    /* margin-top:100px; */
+    padding:80px;
+    line-height:30px;
+    display:grid;
+    grid-template-columns:  30% 70%;
+    grid-template-areas: 
+    "info lists "
+    "follows . "
+
+}
+
+.user-info{
+    grid-area: info;
+    border:2px white solid;
+    width:50%;
+}
+
+.user-follows{
+    grid-area:follows;
+}
+
+.user-lists{
+    grid-area:lists;
+}

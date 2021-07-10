@@ -13,16 +13,16 @@ function UserLists(id) {
 
     useEffect(() => {
         dispatch(renderUserLists(id?.id))
-    }, [dispatch, id.id])
+    }, [dispatch, id.id, lists])
 
     return(
-        <div> User's Lists
+        <ul> 
             {lists?.map((list) => (
-                <div key={list?.id}>
-                    <Link to={`/lists/${list.id}`}>  listname: {list?.listName} </Link>
-                </div>
+                <li key={list?.id}>
+                    <Link to={`/lists/${list.id}`}>  {list?.listName} </Link>
+                </li>
             ))}
-        </div>
+        </ul>
     )
 }
 
