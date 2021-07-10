@@ -38,6 +38,53 @@ body {
     text-decoration:none;
     /* color: #c70032; */
   }
+  
+  #link, #git{
+    margin-left:10px;
+    padding-top:15px;
+    justify-content: space-between;
+    /* background-color: black; */
+    
+    
+  }
+
   a:hover{
     color:blue;
 }
+
+.user-object--avi {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* object-fit: cover; */
+  /* padding:10px; */
+  /* margin: 10px; */
+  /* padding-left: 10px; */
+  
+}
+
+.about-logos{
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+
+  /* padding: 20px ; */
+  /* margin: 10px; */
+  /* justify-content: space-around; */
+}
+.footer{
+  background-color: #fdc12a;
+  padding:0;
+  height:fit-content;
+  border-top: black 1px solid;
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  
+}
+
+/* .icons{
+  width: 50px;
+  height: 50px;
+} */
