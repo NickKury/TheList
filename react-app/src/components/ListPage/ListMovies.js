@@ -18,7 +18,7 @@ const ListMovies = () => {
 
     useEffect(() => {
         dispatch(renderListMovies(listId.id))
-    }, [dispatch, listId.id]) //added
+    }, [dispatch]) //added
 
     
 

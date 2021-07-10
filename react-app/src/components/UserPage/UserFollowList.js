@@ -14,7 +14,7 @@ const UserFollowList = ({id}) => {
 
     useEffect(() => {
         dispatch(getUser(id))
-    }, [dispatch, id])
+    }, [dispatch])
 
     return( 
         <div>

@@ -26,7 +26,7 @@ const AddReview = ({movie}) => {
 
     useEffect(() => {
         dispatch(renderMovieReviews(movie.id))
-    }, [dispatch, movie.id]) //added
+    }, [dispatch]) //added
 
     const updateContent = e => setContent(e.target.value)
 

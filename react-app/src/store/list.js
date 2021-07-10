@@ -51,7 +51,7 @@ export const renderListMovies = (id) => async(dispatch) => {
     const res = await fetch(`/api/lists/${id}`);
     if(res.ok){
         const list = await res.json();
-        console.log('list from thunk====================================', list)
+        // console.log('list from thunk====================================', list)
         dispatch(setOneList(list));
     } else console.log("Error in rendering list movies")
 }

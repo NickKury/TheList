@@ -13,7 +13,7 @@ const ListPage = () => {
     const dispatch = useDispatch();
     const list = useSelector(state => state.list)
     const currentUser = useSelector(state => (state.session))
-    console.log('list from listPage', list, currentUser)
+    // console.log('list from listPage', list.list)
 
 
     useEffect(() => {
@@ -27,14 +27,14 @@ const ListPage = () => {
             <div className='list-info'>
                 <strong>{list.list?.listName}</strong>
                 <div>
-                    <Link to={`/users/${list.list?.user_id}`}>See more lists from this user</Link>
+                    <Link to={`/users/${list?.list?.user_id}`}>See more lists from this user</Link>
                 </div>
             {list.list?.user_id === currentUser.user?.id
             ?
                 <DeleteList list={list}/>
             : null}
             </div>
-            <h2 className='list-title'>  {`${list.list?.listName}'s Movies`} </h2>
+            <h2 className='list-title'>  {`${list?.list?.listName}'s Movies`} </h2>
             <strong className='list-movies'>
             <ListMovies/>
             </strong>

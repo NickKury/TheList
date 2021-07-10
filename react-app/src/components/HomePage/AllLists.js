@@ -12,7 +12,7 @@ const AllLists = () => {
 
     useEffect(() => {
         dispatch(renderAllLists())
-    }, [dispatch, lists])
+    }, [dispatch])
 
     return(
        <ul>

@@ -11,11 +11,11 @@ const MovieReviews = (movie) => {
     const dispatch = useDispatch();
     const reviews = useSelector(state => Object.values(state.review));
     const user = useSelector(state => state.session) //current user
-    console.log("movie from movie reviews", movie, movieId)
+    console.log("movie from movie reviews", movieId, reviews)
 
     useEffect(() => {
         dispatch(renderMovieReviews(movieId.id))
-    }, [dispatch, movieId.id]) //removed movie
+    }, [dispatch, movieId.id])
 
     return(
         <div >
