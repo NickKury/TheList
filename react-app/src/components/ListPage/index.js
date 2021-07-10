@@ -11,9 +11,9 @@ import './ListPage.css'
 const ListPage = () => {
     const {id} = useParams();
     const dispatch = useDispatch();
-    const list = useSelector(state => state.list)
+    const list = useSelector(state => state?.list)
     const currentUser = useSelector(state => (state.session))
-    // console.log('list from listPage', list.list)
+    console.log('list from listPage', list.list)
 
 
     useEffect(() => {

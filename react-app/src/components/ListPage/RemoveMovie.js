@@ -9,7 +9,7 @@ const RemoveMovie = ({movie}) => {
     const listId = useParams()
     const list = useSelector(state => state.list)
     const currentUser = useSelector(state => (state.session))
-    // console.log('list from removeMovie', list.list?.user_id, currentUser.user?.id)
+    console.log('list from removeMovie', list)
     
     useEffect(() =>{
         dispatch(renderAllMovies())
@@ -19,7 +19,7 @@ const RemoveMovie = ({movie}) => {
         e.preventDefault();
         
         // console.log("list_id and movie.id from removemovie", list.id, movie.id)
-        dispatch(removeMovie(Number(listId.id), movie.id))
+        dispatch(removeMovie(Number(listId?.id), movie.id))
     }
 
 
