@@ -4,6 +4,7 @@ import AllMovies from "./AllMovies"
 import UserFollowList from "../UserPage/UserFollowList"
 import { useSelector } from "react-redux";
 import './HomePage.css'
+import UserLists from "../UserPage/UserLists";
 
 const HomePage = () => {
     const {user} = useSelector(state => (state.session));
@@ -13,23 +14,28 @@ const HomePage = () => {
     return(
         <div className='home-page'>
         <h1>Welcome to TheList</h1>
+            <div className='movie-list'>
+                <AllMovies/>
+            </div>
+        {user 
+        ? <>
         <div className='create-list'>
             <CreateListForm/>
         </div>
-        
             <div className='all-lists'>
-                All Lists:
-                <AllLists/>
-            </div>
-            <div className='movie-list'>
-                <AllMovies/>
+                {`${user?.username}`}'s Lists:
+                {/* <AllLists/> */}
+                <UserLists id={user?.id}/>
             </div>
             <div className='friends-list'>
                 {`${user?.username} Follows:`}
                 <UserFollowList id={user?.id}/>
             </div>
+            </>
+        : null
+        }
             <div className='search-bar'> 
-                Search
+                {/* Search */}
             </div>
         </div>
     )

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
 // import { renderAllLists } from "../../store/list";
-import { renderListMovies } from "../../store/list";
+import { renderListMovies, renderOneList } from "../../store/list";
 import RemoveMovie from "./RemoveMovie";
 import { Link } from "react-router-dom";
 //try params
@@ -14,14 +14,14 @@ const ListMovies = () => {
     const list = useSelector(state => Object.values(state?.list))
     let listMovies 
     if(list.length){
-     listMovies = Object.values(list[0].movies)  
+     listMovies = Object.values(list[0]?.movies)  
     }
     // // const movies = list[]
-    // console.log('movies from listmovies', listMovies)
+    // console.log('movies from listmovies', listMovies, list[0])
 
     useEffect(() => {
-        dispatch(renderListMovies(listId.id))
-    }, [dispatch]) //added
+        dispatch(renderOneList(listId?.id))
+    }, [dispatch, listId]) //added
 
     
 

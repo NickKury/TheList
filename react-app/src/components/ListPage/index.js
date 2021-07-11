@@ -15,11 +15,10 @@ const ListPage = () => {
     // filter lists for list.id == Num id
     const list = lists.filter(list => list.id == id)
     const currentUser = useSelector(state => (state.session))
-    console.log('list from listPage', list)
+    // console.log('list from listPage', list)
 
 
     useEffect(() => {
-        console.log('id from ')
         dispatch(renderOneList(id))
     }, [dispatch, id])
 

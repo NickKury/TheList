@@ -8,7 +8,7 @@ function UserLists(id) {
     const dispatch = useDispatch();
     const lists = useSelector(state => Object.values(state.list));
     // const user = useSelector(state => state.session.user)
-    console.log('list form userlists', lists)
+    // console.log('list form userlists', lists)
     
 
     useEffect(() => {
@@ -18,7 +18,7 @@ function UserLists(id) {
     return(
         <ul> 
             {lists?.map((list) => (
-                <li key={list?.id}>
+                <li key={list.listName}>
                     <Link to={`/lists/${list.id}`}>  {list?.listName} </Link>
                 </li>
             ))}
