@@ -17,7 +17,7 @@ const MoviePage = () => {
 
     useEffect(() => {
         dispatch(renderOneMovie(id))
-    }, [dispatch])
+    }, [dispatch, id])
 
     return(
         <div className='movie-page'> 

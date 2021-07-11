@@ -15,8 +15,8 @@ def get_all_lists():
 @list_routes.route('/<int:id>')
 def get_one_list(id):
     list = List.query.get(id)
-    movies = list.movies
-    return {"list": list.to_dict(), "movie": [movie.to_dict() for movie in movies]}
+    # movies = list.movies
+    return list.to_dict()
     # return {"list": list.to_dict(), "movie": movie.to_dict()}
 
 

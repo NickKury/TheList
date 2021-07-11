@@ -7,9 +7,10 @@ import { renderAllMovies } from "../../store/movie";
 const RemoveMovie = ({movie}) => {
     const dispatch = useDispatch();
     const listId = useParams()
-    const list = useSelector(state => state.list)
+    const list = useSelector(state => Object.values(state.list))
+    const currentList = list[0]
     const currentUser = useSelector(state => (state.session))
-    // console.log('list from removeMovie', list.list?.user_id, currentUser.user?.id)
+    // console.log('list from removeMovie', currentList.user_id)
     
     useEffect(() =>{
         dispatch(renderAllMovies())
@@ -19,13 +20,13 @@ const RemoveMovie = ({movie}) => {
         e.preventDefault();
         
         // console.log("list_id and movie.id from removemovie", list.id, movie.id)
-        dispatch(removeMovie(Number(listId.id), movie.id))
+        dispatch(removeMovie(Number(listId?.id), movie.id))
     }
 
 
     return(
         <>
-            {list.list?.user_id === currentUser.user?.id
+            {currentList.user_id === currentUser.user?.id
             ?
                     <button onClick={handleRemoveMovie}>
                         Remove Movie

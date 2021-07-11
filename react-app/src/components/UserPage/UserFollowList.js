@@ -10,11 +10,11 @@ const UserFollowList = ({id}) => {
     // const {id} = useParams()
     const user = useSelector(state => state.user)
     const followings = user.follows
-    // console.log('followings from userfollowlist', user.follows)
+    // console.log('followings from userfollowlist', user)
 
     useEffect(() => {
         dispatch(getUser(id))
-    }, [dispatch])
+    }, [dispatch, id])
 
     return( 
         <div>

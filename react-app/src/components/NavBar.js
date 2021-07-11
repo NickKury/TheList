@@ -66,12 +66,12 @@ const NavBar = () => {
                 Demo User
               </button>
             <li className="navitem">
-              <NavLink to="/sign-up" exact={true} activeClassName="active">
+              <NavLink to="/sign-up" exact={true} activeClassName="active" id='nav-button'>
                 Sign Up
               </NavLink>
             </li>
             <li className="navitem">
-              <NavLink to="/login" exact={true} activeClassName="active">
+              <NavLink to="/login" exact={true} activeClassName="active" id='nav-button'>
                 Log In
               </NavLink>
             </li>

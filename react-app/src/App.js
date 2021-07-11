@@ -12,6 +12,7 @@ import MoviePage from './components/MoviePage';
 import ListPage from './components/ListPage';
 import UserPage from './components/UserPage';
 import HomePage from './components/HomePage';
+import Footer from './components/Footer';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -58,6 +59,7 @@ function App() {
           <UserPage/>
         </Route>
       </Switch>
+      <Footer/>
     </BrowserRouter>
   );
 }
