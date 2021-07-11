@@ -11,12 +11,15 @@ import './ListPage.css'
 const ListPage = () => {
     const {id} = useParams();
     const dispatch = useDispatch();
-    const list = useSelector(state => state?.list)
+    const lists = useSelector(state => Object.values(state?.list)) //all lists
+    // filter lists for list.id == Num id
+    const list = lists.filter(list => list.id == id)
     const currentUser = useSelector(state => (state.session))
-    console.log('list from listPage', list.list)
+    console.log('list from listPage', list)
 
 
     useEffect(() => {
+        console.log('id from ')
         dispatch(renderOneList(id))
     }, [dispatch, id])
 
@@ -25,16 +28,16 @@ const ListPage = () => {
             {/* <div className='delete-list'>
             </div> */}
             <div className='list-info'>
-                <strong>{list.list?.listName}</strong>
+                <strong>{list[0]?.listName}</strong>
                 <div>
-                    <Link to={`/users/${list?.list?.user_id}`}>See more lists from this user</Link>
+                    <Link to={`/users/${list[0]?.user_id}`}>See more lists from this user</Link>
                 </div>
-            {list.list?.user_id === currentUser.user?.id
+            {list[0]?.user_id === currentUser.user?.id
             ?
                 <DeleteList list={list}/>
             : null}
             </div>
-            <h2 className='list-title'>  {`${list?.list?.listName}'s Movies`} </h2>
+            <h2 className='list-title'>  {`${list[0]?.listName}'s Movies`} </h2>
             <strong className='list-movies'>
             <ListMovies/>
             </strong>

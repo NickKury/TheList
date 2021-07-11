@@ -129,17 +129,17 @@ export default function listReducer(state=initialState, action) {
             return {...action.payload};
         
         case SET_ONE_LIST:
-            // newState[action.payload.id] = action.payload;
-            // return newState;
-            return {...action.payload};
+            newState[action.payload.listName] = action.payload;
+            return newState;
+            // return {...action.payload};
             // return oneListState;
 
         case ADD_LIST:
-            newState[action.payload.id] = action.payload;
+            newState[action.payload.listName] = action.payload;
             return newState;
 
         case REMOVE_LIST:
-            delete newState[action.payload.id]
+            delete newState[action.payload.listName]
             return newState;
 
         default:

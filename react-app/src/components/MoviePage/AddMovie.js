@@ -12,7 +12,7 @@ const AddMovie = ({movie}) => {
     // const {id} = useParams();
     // const user = useSelector(state => state.session.user);
     const lists = useSelector(state => Object.values(state.list))
-    console.log("lists from AddMovie", lists, movie)
+    // console.log("lists from AddMovie", lists, movie)
     const [list, setList] = useState('') 
     const [showModal, setShowModal] = useState(false);
     // history.push(`/`)

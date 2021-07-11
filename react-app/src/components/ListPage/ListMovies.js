@@ -11,10 +11,13 @@ const ListMovies = () => {
     const dispatch = useDispatch();
     // const user = useSelector(state => state.session?.user);
     const listId = useParams(); //?
-    const list = useSelector(state => (state?.list))
-    const listMovies = list.movie
-    // const movies = list[1]
-    // console.log('movies from listmovies', movies, list?.movie, listMovies)
+    const list = useSelector(state => Object.values(state?.list))
+    let listMovies 
+    if(list.length){
+     listMovies = Object.values(list[0].movies)  
+    }
+    // // const movies = list[]
+    // console.log('movies from listmovies', listMovies)
 
     useEffect(() => {
         dispatch(renderListMovies(listId.id))
@@ -22,11 +25,11 @@ const ListMovies = () => {
 
     
 
-    return(
+    return( 
         <div>
             {listMovies?.map((movie) => (
                 <div id='movie' key={movie?.title}> 
-                    <img src={movie?.poster_path} alt={movie.title} />
+                    <img src={movie?.poster_path} alt={movie?.title} />
                     <div>
                         <Link to={`/movies/${movie?.id}`}> Movie: {movie?.title} </Link>
                         <RemoveMovie movie={movie}/>  
