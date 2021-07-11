@@ -11,6 +11,8 @@
 ## What is The List?
 The List is a fullstack web application that allows users to organize lists of movies they would like to watch and informs where to watch find these movies. 
 
+![](https://github.com/NickKury/TheList/blob/main/documentation/home-page.png)
+
 Users can create multiple lists and add or remove movies from their lists.  Users can also follow one another to further explore movovies that they can add to their lists.  Each movie had an overview and where to stream, along with user reviews of the movies.  
 
 ## Technologies Used
@@ -23,7 +25,7 @@ The List is a fullstack application.  The backend was built with Python, SQLAlch
 ## Conclusion/Looking Forward
 Building The List was an amazing journey.  It is my first real fullstack project that I created all myself.  It tested my knowlwge and abilities thus far and also showed me where I can continue to improve as a software developer. Overall this was a very valuable endevor and I know I am a sfronger developer because of it. I look forward to improving this application and to continue to create new projects.  
 
-Looking Forward I plan to conitue to flesh out further functionality like favoriting lists, likes on lists, better shareablitiy on lists, and media other than movies.  
+Looking Forward I plan to conitue to flesh out further functionality like searching movies and lists, favoriting lists, likes on lists, better shareablitiy on lists, and media other than movies.  
 
 Thank you for reading 
 
