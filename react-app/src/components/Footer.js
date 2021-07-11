@@ -9,8 +9,6 @@ const Footer = () =>{
                        <div className='icons'>The List was developed by Nick Kury
                         <a id='git' className="fab fa-github" href="https://github.com/NickKury"/>
                         <a id='link' className="fab fa-linkedin" href="https://www.linkedin.com/in/nick-kury-011840213/"/>
-                        {/* <Link to="https://github.com/NickKury"> <i className="fab fa-github"></i></Link>
-                        <Link to="https://www.linkedin.com/in/nick-kury-011840213/"><i className="fab fa-linkedin"></i></Link>    */}
                         </div> 
                 
                 </div>
