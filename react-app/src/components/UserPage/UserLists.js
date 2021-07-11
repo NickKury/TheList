@@ -13,7 +13,7 @@ function UserLists(id) {
 
     useEffect(() => {
         dispatch(renderUserLists(id?.id))
-    }, [dispatch])
+    }, [dispatch, id.id])
 
     return(
         <ul> 

@@ -1,5 +1,5 @@
 import CreateListForm from "../UserPage/CreateListForm"
-import AllLists from "./AllLists"
+// import AllLists from "./AllLists"
 import AllMovies from "./AllMovies"
 import UserFollowList from "../UserPage/UserFollowList"
 import { useSelector } from "react-redux";

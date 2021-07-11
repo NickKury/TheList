@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 // import { useHistory, useParams } from "react-router-dom"
-import { addMovie, renderAllLists, renderUserLists } from "../../store/list";
+import { addMovie, renderUserLists } from "../../store/list";
 // import AllLists from "../HomePage/AllLists";
 import { Modal } from '../../context/Modal'
 
@@ -20,7 +20,7 @@ const AddMovie = ({movie}) => {
     useEffect(()=> {
         // dispatch(renderAllLists())
         dispatch(renderUserLists(user.id))
-    }, [dispatch, movie])
+    }, [dispatch, movie, user.id])
 
     const handleAddMovie = (e) => {
         e.preventDefault();

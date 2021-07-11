@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
 // import { renderAllLists } from "../../store/list";
-import { renderListMovies, renderOneList } from "../../store/list";
+import { renderOneList } from "../../store/list";
 import RemoveMovie from "./RemoveMovie";
 import { Link } from "react-router-dom";
 //try params

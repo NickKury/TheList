@@ -13,7 +13,7 @@ const ListPage = () => {
     const dispatch = useDispatch();
     const lists = useSelector(state => Object.values(state?.list)) //all lists
     // filter lists for list.id == Num id
-    const list = lists.filter(list => list.id == id)
+    const list = lists.filter(list => list.id === Number(id))
     const currentUser = useSelector(state => (state.session))
     // console.log('list from listPage', list)
 
@@ -41,10 +41,10 @@ const ListPage = () => {
             <ListMovies/>
             </strong>
             <div className='share-list'>
-                Share
+                {/* Share */}
             </div>
             <div className='change-list'>
-               Change List
+               {/* Change List */}
             </div>
         </div>
     )
