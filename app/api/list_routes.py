@@ -8,18 +8,14 @@ list_routes = Blueprint('lists', __name__)
 @list_routes.route('')
 def get_all_lists():
     lists = List.query.all()
-    # return {"lists": [list.to_dict() for list in lists]}
     return {list.listName: list.to_dict() for list in lists}
 
 
 @list_routes.route('/<int:id>')
 def get_one_list(id):
     list = List.query.get(id)
-    # movies = list.movies
     return list.to_dict()
     # return {"list": list.to_dict(), "movie": movie.to_dict()}
-
-
 
 
 @list_routes.route('/new', methods=["POST"])
@@ -50,7 +46,6 @@ def delete_list(id):
 def add_movie():
     movie = Movie.query.get(request.form["movie_id"])
     list = List.query.get(request.form["list_id"])
-    # print('movie lists from list_routes===============',movie.lists)
     movie.lists.append(list)
     db.session.add(movie)
     db.session.commit()
@@ -61,7 +56,6 @@ def add_movie():
 @login_required
 def delete_movie():
     print("look here!!!! request from list_routes", request.json["movieId"])
-    # print("look here!!!! request from list_routes", request.form["movieId"])
     movie = Movie.query.get(int(request.json["movieId"]))
     list = List.query.get(int(request.json["listId"]))
     list.movies.remove(movie)

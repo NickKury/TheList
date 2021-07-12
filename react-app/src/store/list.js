@@ -91,7 +91,7 @@ export const addMovie = (formData) => async(dispatch) => {
 }
 
 
-export const removeMovie = (listId, movieId) => async(dispatch) => { //! remove movie thunk
+export const removeMovie = (listId, movieId) => async(dispatch) => { 
     const res = await fetch("/api/lists/remove", {
         method:"DELETE",
         headers: {'Content-Type': 'application/json'},

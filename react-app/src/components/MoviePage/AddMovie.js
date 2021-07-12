@@ -8,17 +8,13 @@ import { Modal } from '../../context/Modal'
 
 const AddMovie = ({movie}) => {
     const dispatch = useDispatch();
-    // const history = useHistory();
-    // const {id} = useParams();
     const user = useSelector(state => state.session.user);
     const lists = useSelector(state => Object.values(state.list))
-    // console.log("lists from AddMovie", lists, movie)
     const [list, setList] = useState('') 
     const [showModal, setShowModal] = useState(false);
-    // history.push(`/`)
+
     
     useEffect(()=> {
-        // dispatch(renderAllLists())
         dispatch(renderUserLists(user.id))
     }, [dispatch, movie, user.id])
 
@@ -27,9 +23,7 @@ const AddMovie = ({movie}) => {
         const formData = new FormData();
         formData.append("list_id", list)
         formData.append("movie_id", movie.id)
-        // console.log("formData from addmovie", id)
         dispatch(addMovie(formData))
-        // history.push(`/`)
         setShowModal(false)
 
     }
