@@ -1,10 +1,12 @@
 import { useDispatch, useSelector } from "react-redux"
 import { followUser, unfollowUser } from "../../store/follow";
 import {  useParams } from "react-router-dom";
+import { useHistory } from "react-router";
 
 
 const Follow = () => {
     
+    const history = useHistory();
     const dispatch = useDispatch();
     const { userId }  = useParams();
     const user = useSelector(state => state.user) //userpage user
@@ -18,12 +20,16 @@ const Follow = () => {
         e.preventDefault();
         // console.log(userId)
         dispatch(followUser(userId))
+        history.push('/')
+        history.goBack()
     }
 
     const handleUnfollow = (e) => {
         e.preventDefault();
         // console.log(userId)
         dispatch(unfollowUser(userId))
+        history.push('/')
+        history.goBack()
     }
 
     return(

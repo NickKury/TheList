@@ -76,10 +76,15 @@ export default function reviewReducer(state=initialState, action) {
     const newState = {...state};
     switch(action.type) {
         case SET_REVIEWS:
-            action.payload.reviews.forEach(review => {
-                newState[review.id] = review; //!here
-            });
-            return newState;
+            const reviewState = {}
+            action.payload.reviews.forEach((review) =>{
+                reviewState[review.id] = review;
+            })
+            return reviewState;
+            // action.payload.reviews.forEach(review => {
+            //     newState[review.id] = review; //!here
+            // });
+            // return newState;
 
         case ADD_REVIEW:
             newState[action.payload.id] = action.payload;
