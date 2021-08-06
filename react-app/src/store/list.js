@@ -129,8 +129,9 @@ export default function listReducer(state=initialState, action) {
             return {...action.payload};
         
         case SET_ONE_LIST:
-            newState[action.payload.listName] = action.payload;
-            return newState;
+            const listState = {}
+            listState[action.payload.listName] = action.payload;
+            return listState;
             // return {...action.payload};
             // return oneListState;
 

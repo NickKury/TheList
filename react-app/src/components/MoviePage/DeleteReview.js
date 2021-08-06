@@ -8,7 +8,7 @@ const DeleteReview = ({review}) => {
     const handleDelete = (e) => {
         e.preventDefault();
         dispatch(removeReview(review.id))
-        console.log('deleted review', review)
+        // console.log('deleted review', review)
 
     }
 

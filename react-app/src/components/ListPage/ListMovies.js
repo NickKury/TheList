@@ -13,11 +13,11 @@ const ListMovies = () => {
     const listId = useParams(); //?
     const list = useSelector(state => Object.values(state?.list))
     let listMovies 
-    if(list.length){
+    if(list?.length){
      listMovies = Object.values(list[0]?.movies)  
     }
     // // const movies = list[]
-    // console.log('movies from listmovies', listMovies, list[0])
+    console.log('movies from listmovies', listMovies, list[0])
 
     useEffect(() => {
         dispatch(renderOneList(listId?.id))

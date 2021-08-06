@@ -9,12 +9,12 @@ import EditReview from "./EditReview";
 const MovieReviews = (movie) => {
     const movieId = useParams();
     const dispatch = useDispatch();
-    const reviews = useSelector(state => Object.values(state.review));
+    const reviews = useSelector(state => Object.values(state?.review));
     const user = useSelector(state => state.session) //current user
     // console.log("movie from movie reviews", movieId, reviews)
 
     useEffect(() => {
-        dispatch(renderMovieReviews(movieId.id))
+        dispatch(renderMovieReviews(movieId?.id))
     }, [dispatch, movieId.id])
 
     return(
