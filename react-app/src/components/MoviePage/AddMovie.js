@@ -12,6 +12,7 @@ const AddMovie = ({movie}) => {
     const lists = useSelector(state => Object.values(state.list))
     const [list, setList] = useState('') 
     const [showModal, setShowModal] = useState(false);
+    console.log('list from addmovie', lists)
 
     
     useEffect(()=> {
@@ -40,8 +41,9 @@ const AddMovie = ({movie}) => {
                     {/* <AllLists/> */}
                     {/* <div>Select a List</div> */}
                     <select onChange={chooseList} value={list}> 
+                    <option key={list.id} value={list.id}> Select a List </option>
                             {lists?.map(list => 
-                            <option key={list?.id} value={list.id}>
+                            <option key={list?.id} value={list?.id}>
                                 {list?.listName}
                             </option>
                             )}
