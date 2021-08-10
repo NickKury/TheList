@@ -36,12 +36,12 @@ const CreateListForm = () => {
         <div>
             <button onClick={() => setShowModal(true)}>Create a New List</button>
             {showModal && (
-                <Modal onClose={() => setShowModal(false)}>
-                    <form onSubmit={handleSubmit}>
+                <Modal  onClose={() => setShowModal(false)}>
+                    <form className='newList' onSubmit={handleSubmit}>
                         <div>
                             <input type="text" name="listName" placeholder="Name Your List" value={listName} onChange={updateListName}/>
+                             <button id='submit-button' type='submit'>Submit</button>
                         </div>
-                        <button type='submit'>Submit</button>
                     </form>
                 </Modal>
             )}

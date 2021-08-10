@@ -20,5 +20,8 @@
   
   #modal-content {
     position: absolute;
-    background-color:white;
+    /* background-color:yellow; */
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #fdc12a;
   }

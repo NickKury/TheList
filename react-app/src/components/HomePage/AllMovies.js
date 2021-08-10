@@ -19,7 +19,9 @@ const AllMovies = () => {
                 <div key={movie?.id} className='all-movies'>
                     <img src={movie?.poster_path} alt={movie.title}/>
                     <div>
-                   <Link to={`/movies/${movie.id}`}>{movie?.title} </Link>
+                   <Link to={`/movies/${movie.id}`}>
+                       <button>{movie?.title} </button> 
+                    </Link>
                    {user.user !== null
                 ?
                     <>

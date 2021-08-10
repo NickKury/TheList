@@ -23,3 +23,15 @@
 .user-lists{
     grid-area:lists;
 }
+
+.newList{
+    background-color: darkblue;
+    /* border-radius: 50%; */
+    padding: 10px;
+    align-items: center;
+    
+}
+
+#submit-button{
+    /* background-color: green; */
+}
